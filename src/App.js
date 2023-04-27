@@ -7,23 +7,12 @@ function Header(){
   <h4>A Warehouse Management System</h4>
 </header>
 }
-function NavBar(){
-  return (
-    <nav>
-		<ul>
-      <button><a href="/">Staff Directory</a></button>
-      <button><a href="/staff/add">Add Staff!</a></button>
-      <button><a href="/orders">My Orders</a></button>
-      <button><a href="/inventory">My Inventory</a></button>
-		</ul>
-	</nav>
-  )
-}
+import Navbar from './components/navbar';
 function App() {
   return (
     <Router>
       <Header/>
-      <NavBar/>
+      <Navbar />
       <Route path ="/staff/add" component={AddStaff} />
       <Route path ="/orders" component={Orders}/>
       <Route path ="/inventory" component={Inventory}/>

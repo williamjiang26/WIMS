@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+
 function Header(){
   return <header>
   <h1><span>W</span>IMS</h1>
@@ -10,17 +11,14 @@ function NavBar(){
   return (
     <nav>
 		<ul>
-			<li><a href="/">Staff Directory</a></li>
-      <li><a href="/staff/add">Add Staff!</a></li>
-			<li><a href="/orders">My Orders</a></li>
-			<li><a href="/inventory">My Inventory</a></li>
+      <button><a href="/">Staff Directory</a></button>
+      <button><a href="/staff/add">Add Staff!</a></button>
+      <button><a href="/orders">My Orders</a></button>
+      <button><a href="/inventory">My Inventory</a></button>
 		</ul>
 	</nav>
   )
 }
-
-
-
 function App() {
   return (
     <div className="App">

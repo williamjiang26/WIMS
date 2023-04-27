@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Router, Route} from "react-router-dom"
+import {BrowserRouter as Router, Route} from "react-router-dom"
 function Header(){
   return <header>
   <h1><span>W</span>IMS</h1>

@@ -1,5 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+function Header(){
+  return <header>
+  <h1><span>W</span>IMS</h1>
+  <h4>A Warehouse Management System</h4>
+</header>
+}
 function NavBar(){
   return (
     <nav>
@@ -18,21 +24,8 @@ function NavBar(){
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <NavBar/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <NavBar/>
     </div>
   );
 }

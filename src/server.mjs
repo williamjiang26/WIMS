@@ -38,7 +38,7 @@ app.get('/', async(req,res) => {
   .catch(err => res.send(err))
 })
 app.get('/staff/add', async(req,res) => {
-  res.render('staff')
+  res.render()
 })
 
 app.post('/', async(req,res) => {

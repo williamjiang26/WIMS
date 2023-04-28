@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+header {
+	padding: 5px;
+	text-align: center;
+	background: #128f76;
+	color: white;
+	font-size: 30px;
+}
+
+span{
+	color: #90f7d1;
+}
+
+nav {
+  background-color: #10a386;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.current {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}  
+.current:hover:not(.active) {
+  color: #90f7d1;
+}
+.body{
+  color: #10a386;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto;
+  width: 80%;
+}
+
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	
+}
+form {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

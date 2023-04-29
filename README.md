@@ -95,7 +95,7 @@ An Example User:
 * ( 1 points) Design a warehouse layout map
 * ( 1 points) Secure logins // might not get to
 
-## [Link to Initial Main Project File](app.mjs) 
+## [Link to Initial Main Project File](app.js) 
 
 ## Annotations / References Used
 1. 

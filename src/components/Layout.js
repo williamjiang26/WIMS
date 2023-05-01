@@ -10,7 +10,7 @@ const Layout = () => {
             </header> 
             <nav>
                 <ul>
-                    <Link to="/login" className='current'>Employee Login</Link>
+                    {/* <Link to="/login" className='current'>Employee Login</Link> */}
                     <Link to="/staff" className="current">Staff Directory</Link>
                     <Link to="/order" className="current">Client Orders</Link>
                     <Link to="/inventory" className="current">Inventory</Link>

@@ -31,6 +31,12 @@ const ItemSchema = new mongoose.Schema({
 })
 const Item = mongoose.model('Item', ItemSchema);
 
+const UserSchema = new mongoose.Schema({
+  username: {type: String, required: true, minLength: 3, maxLength: 20},
+  password: {type: String, required: true, minLength: 8},
+  email: {type: String, required: true},
+});
+
 // module.exports = Staff;
 // module.exports = Order;
 // module.exports = Item;

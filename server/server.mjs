@@ -6,12 +6,38 @@ import cors from 'cors'
 const Staff = mongoose.model('Staff')
 const Order = mongoose.model('Order')
 const Item = mongoose.model('Item')
+const User = mongoose.model('User');
 
 const app = express();
 app.use(cors())
 app.use(express.json())
 
+app.get('/login', (req, res) => {
+  res.send('login');
+});
 
+app.post('/login', async (req, res) => {
+  const username = sanitize(req.body.username);
+  const password = sanitize(req.body.password);
+
+  console.log(req.body)
+  
+  const foundUser = await User.findOne({username: username});
+  try{
+    if ((foundUser.username === username) && (bcrypt.compareSync(password, foundUser.password))){
+      await startAuthenticatedSession(req, foundUser);
+      res.redirect('/');
+    }else{
+        res.render('login', {message: 'login and password combination could not be found'});
+    }
+  }catch (err) {
+    if(err instanceof mongoose.Error.ValidationError) {
+      res.render('login', {message: err.message});
+    } else {
+      throw err;
+    }
+  }
+  });
 
 app.get("/staff", async (req,res) => {
   try {

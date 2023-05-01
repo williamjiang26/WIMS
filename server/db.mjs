@@ -11,7 +11,7 @@ const StaffSchema = new mongoose.Schema({
   Name: String, 
 
 })
-mongoose.model('Staff', StaffSchema);
+const Staff = mongoose.model('Staff', StaffSchema);
 
 const OrderSchema = new mongoose.Schema({
 
@@ -20,7 +20,7 @@ const OrderSchema = new mongoose.Schema({
   Item: String, 
 
 })
-mongoose.model('Order', OrderSchema);
+const Order = mongoose.model('Order', OrderSchema);
 
 const ItemSchema = new mongoose.Schema({
 
@@ -29,9 +29,11 @@ const ItemSchema = new mongoose.Schema({
   Size: String, 
 
 })
-mongoose.model('Item', ItemSchema);
+const Item = mongoose.model('Item', ItemSchema);
 
-
+// module.exports = Staff;
+// module.exports = Order;
+// module.exports = Item;
 
 
 mongoose.connect('mongodb://localhost/project');

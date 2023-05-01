@@ -9,6 +9,8 @@ const Item = mongoose.model('Item')
 
 const app = express();
 app.use(cors())
+app.use(express.json())
+
 
 
 app.get("/staff", async (req,res) => {
@@ -21,16 +23,17 @@ app.get("/staff", async (req,res) => {
 });
 
 app.post("/staff", async(req,res) => {
-  res.send(req.body)
-});
-
-app.get("/order", async (req,res) => {
+  const staff = new Staff({
+    Team: req.body.Team,
+    Age: req.body.Age, 
+    Name: req.body.Name
+  })
   try {
-    const orders = await Order.find({})
-    res.send(orders)
-  }catch (error){
-    console.log(error)
-  }
+    await staff.save()
+    res.redirect('/staff')
+  } catch(error) {
+    res.send({error})
+}
 });
 
 app.get("/inventory", async (req,res) => {
@@ -41,6 +44,39 @@ app.get("/inventory", async (req,res) => {
     console.log(error)
   }
 });
+
+app.post("/inventory", async (req,res) => {
+  const item = new Item(req.body)
+  try {
+    await item.save()
+    res.redirect('/inventory')
+  }catch (error){
+    console.log(error)
+  }
+});
+
+
+
+app.get("/order", async (req,res) => {
+  try {
+    const orders = await Order.find({})
+    res.send(orders)
+  }catch (error){
+    console.log(error)
+  }
+});
+
+app.post("/order", async (req,res) => {
+    const order = new Order(req.body)
+    try{
+      await order.save()
+      res.redirect('/order')
+    }catch(error){
+      console.log(error)
+    }
+});
+
+
 
 
 

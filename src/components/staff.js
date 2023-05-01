@@ -25,7 +25,7 @@ function GetData(){
     })}
     </table>)
 }  
-
+//
 function PostData(){
    const [formdata, setformdata] = useState({
     Name: '',
